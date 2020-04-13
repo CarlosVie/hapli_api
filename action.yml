@@ -1,0 +1,13 @@
+name: CLI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+      - name: Build, tag, and push image to Amazon ECR
+          id: build-image
+          run:
+            - bundle install
+            - ./deploy.sh
